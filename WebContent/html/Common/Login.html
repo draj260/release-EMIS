@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="../../Lib/bootstrap-4.3.1-dist/css/bootstrap.min.css"></link>
+<script type='text/javascript' language='JavaScript' src="../../Lib/jquery-3.4.1.js"></script>
+
+<script type="text/javascript" language="JavaScript" src="../../Lib/angular.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../Lib/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" language="JavaScript" src="../../AngularController/Common/LoginController.js"></script>
+<title>Login</title>
+<style>
+	body,h1 {
+
+	font-family: "Raleway", sans-serif
+
+	}
+	body, html
+	{
+		height: 100%
+	}
+	.bgimg {
+	  background-color:white;
+	  min-height: 100%;
+	  background-position: center;
+	  background-size: cover;
+	}
+
+	.familyFont
+	{
+	  font-family: Arial, Helvetica, sans-serif;
+	  color: #FFFFFF;
+	  bottom: 50px;
+	  font-size: 40px;
+	}
+	.textPositionHeader
+	{
+		position: absolute;
+		bottom: 428px;
+		left : 14px;
+		margin-left:5%;
+		margin-bottom:2%;
+	}
+	.split
+	{ height:100%;
+	  width:35%;
+	  position:fixed;
+	  z-index:1;
+	  top:0px;
+	  overflow-x:hidden;
+	  padding-top:20px;
+	}
+	.left
+	{
+		left:0px;
+		background-color:#111;
+		background-image:url('Images/BG3.png');
+
+	}
+	.familyFontheader
+	{	font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		color: #FFFFFF;
+		bottom: 50px;
+		font-size: 35px;
+	}
+	.textPosition
+	{
+	  position: absolute;
+	  bottom: 332px;
+	  left : 14px;
+	  margin-left:5%;
+	}
+	.footer-line
+	{
+		position:absolute;
+		width:440px;
+		height:4px;
+		background-color:#D69F08;
+		border:none;
+		border-radius:5px;
+		margin-left:15px;
+		margin-top:20px;
+	}
+	.textFooter
+	{
+		position: absolute;
+		margin-top:2px;
+		margin-left:14px;
+	}
+	.buttonstyle
+	{
+		margin-top:8%;
+	}
+	.btn
+	{
+			  border: none; /* Remove borders */
+			  color: white; /* Add a text color */
+			  padding: 14px 28px; /* Add some padding */
+			  cursor: pointer; /* Add a pointer cursor on mouse-over */
+	}
+
+	.info {background-color: #2196F3;} /* Blue */
+	.info:hover {background: #0b7dda;}
+
+
+	.lblParameter
+		{
+			font-weight:normal !important;
+			text-align:left !important;
+			padding-right: 15px !important;
+			background: url("Images/redMandatory.png") no-repeat right !important;
+		}
+	</style>
+
+</head>
+<body ng-app="LoginApp">
+<div id="overlay" ng-style="overlay" style ="display : none" >
+	 <div id="loaderdiv"  ng-model="loaderdiv"  class="loader"> </div>
+	 </div>
+	<div class="bgimg w3-display-container w3-animate-opacity w3-text-white" ng-controller="LoginController">
+
+
+	  <div style="margin-left:30%">
+			<center >
+			<div class="wrapper fadeInDown">
+  <div id="formContent">
+
+    <div id="top-card"   class="fadeIn first">
+	
+    </div>
+
+
+    <!-- Login Form -->
+    <form>
+	 <table style="margin-left:14%;">
+	  <tbody>
+    <tr >
+     <td ><h2  class="fadeIn second">{{User}}</h2></td>
+      <td> <input type="text" id="login" class="fadeIn second" ng-model="user" ng-change="user=user.toUpperCase()" name="user" ></td>
+    </tr>
+    <tr>
+     <td><h2 class="fadeIn third">{{Password}}</h2></td>
+      <td> <input type="password" id="password" class="fadeIn third"  ng-model="password"  name="password"></td>
+    </tr>
+	    <tr>
+     <td><h2 class="fadeIn fourth">{{Branch}}</h2></td>
+      <td> <input type="text" id="branch" class="fadeIn fourth" ng-model="branch"ng-change="branch=branch.toUpperCase()"  name="branch"></td>
+    </tr>
+	    <tr>
+     <td><h2 class="fadeIn fifth">{{Role}}</h2></td>
+      <td> <input type="text" id="role" class="fadeIn fifth" ng-change="role=role.toUpperCase()"  ng-model="role" name="role"></td>
+    </tr>
+  </tbody>
+	<table>
+
+	<input type="submit" class="fadeIn sixth"  ng-click="authenticateLogIn()" value="Log In">
+
+   </form>
+
+    <div class="fadeIn sixth"  id="formFooter">
+
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
+  </div>
+</div>
+			</center>
+	  </div>
+	  </div>
+</body>
+</html>
